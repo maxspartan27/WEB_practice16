@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="obsidian">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Стаття з прикладами й таблицями — Спортивний клуб APEX</title>
+  <meta name="description" content="Практична стаття Максима Ковалишина з розрахунками, прикладами програм, 3 калькуляторами та модернізованими таблицями періодизації.">
+  <meta name="author" content="Максим Ковалишин">
+  <meta name="theme-color" content="#080b12">
+  <link rel="canonical" href="https://maxspartan27.github.io/article.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content="Стаття з прикладами й таблицями — Спортивний клуб APEX">
+  <meta property="og:description" content="Практична стаття Максима Ковалишина з розрахунками, прикладами програм, 3 калькуляторами та модернізованими таблицями періодизації.">
+  <meta property="og:url" content="https://maxspartan27.github.io/article.html">
+  <meta property="og:image" content="https://maxspartan27.github.io/images/article-periodization.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("apex-ui-theme");
+        if (["obsidian", "daylight", "biolab", "amethyst", "titan", "cyber", "crimson", "nordic"].indexOf(t) !== -1) {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+        var f = localStorage.getItem("apex-font-scale");
+        if (f === "lg" || f === "xl") {
+          document.documentElement.setAttribute("data-font-scale", f);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Періодизація навантажень і пульсові зони: практична стаття з прикладами та таблицями",
+    "author": {
+      "@type": "Person",
+      "name": "Максим Ковалишин"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Спортивний клуб APEX"
+    },
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "image": "https://maxspartan27.github.io/images/article-periodization.jpg"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html" aria-label="Спортивний клуб APEX — на головну сторінку">
+          <span class="brand-mark" data-icon="apex"></span>
+          <span>
+            APEX
+            <span class="brand-sub">Performance Club</span>
+          </span>
+        </a>
+        <button type="button" class="build-pill" data-open-build title="Відкрити технічний паспорт v3.1 (build 197) RS3">
+          <span data-icon="cpu"></span>v3.1 <span>• b197 RS3</span>
+        </button>
+      </div>
+
+      <nav class="main-nav" id="primary-navigation" aria-label="Головна навігація сайту">
+        <a class="nav-link" href="index.html"><span data-icon="home"></span>Головна</a>
+        <a class="nav-link" href="topics.html"><span data-icon="layers"></span>Теми (12)</a>
+        <a class="nav-link active" href="article.html" aria-current="page"><span data-icon="table"></span>Періодизація</a>
+        <a class="nav-link" href="journal.html"><span data-icon="book"></span>Біоархітектура</a>
+        <a class="nav-link" href="biomechanics.html"><span data-icon="gauge"></span>VBT-стаття</a>
+        <a class="nav-link" href="about.html"><span data-icon="shield"></span>Про клуб</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-action-btn" data-open-palette title="Швидкий пошук по сайту (Ctrl+K)" aria-label="Швидкий пошук по сайту">
+          <span data-icon="search"></span>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+
+        <button type="button" class="icon-action-btn" data-open-plan title="Мій персональний список тренувальних тем" aria-label="Відкрити мій план тренувань">
+          <span data-icon="bookmark"></span>
+          <span class="plan-count-badge">0</span>
+        </button>
+
+        <div class="theme-switcher" role="group" aria-label="Швидкий перемикач 8 колірних тем">
+          <button type="button" class="theme-btn active" data-set-theme="obsidian" aria-pressed="true" title="Тема Вулкан" aria-label="Тема Вулкан"><span data-icon="flame"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="daylight" aria-pressed="false" title="Тема Кварц" aria-label="Тема Кварц"><span data-icon="sun"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="biolab" aria-pressed="false" title="Тема Біолаб" aria-label="Тема Біолаб"><span data-icon="activity"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="amethyst" aria-pressed="false" title="Тема Імпульс" aria-label="Тема Імпульс"><span data-icon="sparkles"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="titan" aria-pressed="false" title="Тема Титан" aria-label="Тема Титан"><span data-icon="award"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="cyber" aria-pressed="false" title="Тема Крига" aria-label="Тема Крига"><span data-icon="snowflake"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="crimson" aria-pressed="false" title="Тема Рубін (NEW RS3)" aria-label="Тема Рубін"><span data-icon="crimson"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="nordic" aria-pressed="false" title="Тема Срібло (NEW RS3)" aria-label="Тема Срібло"><span data-icon="leaf"></span></button>
+        </div>
+
+        <button type="button" class="icon-action-btn" data-open-studio title="Відкрити студію 8 тем і розміру шрифту">
+          <span data-icon="palette"></span>
+          <span class="icon-action-label">Теми</span>
+        </button>
+
+        <a class="btn btn-primary btn-sm header-cta-desktop" href="about.html#booking">Записатися</a>
+
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Відкрити меню навігації"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Навігаційний ланцюжок">
+          <li><a href="index.html">Головна</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Стаття з прикладами й таблицями</li>
+        </ol>
+        <span class="eyebrow"><span data-icon="table"></span>Методичний посібник v3.1 (build 197) RS3 • Спортивна фізіологія в цифрах</span>
+        <h1>Періодизація навантажень і пульсові зони: практична стаття з прикладами та таблицями</h1>
+        <div class="article-meta-bar">
+          <span class="article-meta-item"><span data-icon="award"></span>Автор: <strong>Максим Ковалишин</strong></span>
+          <span class="article-meta-item"><span data-icon="calendar"></span>Оновлено: <time datetime="2026-11-06">6 листопада 2026</time></span>
+          <span class="article-meta-item"><span data-icon="timer"></span>Час ознайомлення: 12 хвилин</span>
+          <span class="badge badge-accent"><span data-icon="calculator"></span>3 таблиці RS3 + 3 живі калькулятори</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-layout">
+        <!-- Бічна навігація по статті -->
+        <aside class="article-sidebar" aria-label="Зміст методичної статті">
+          <div class="toc-card">
+            <div class="toc-title"><span data-icon="compass"></span>Зміст публікації</div>
+            <ul class="toc-list">
+              <li><a class="toc-link active" href="#sec-intro">1. Принцип суперкомпенсації</a></li>
+              <li><a class="toc-link" href="#sec-hr-zones">2. Пульсові зони та Карвонен</a></li>
+              <li><a class="toc-link" href="#sec-calculators">3. Три калькулятори (ЧСС, 1ПМ, КБЖВ)</a></li>
+              <li><a class="toc-link" href="#sec-periodization">4. Хвильова періодизація DUP</a></li>
+              <li><a class="toc-link" href="#sec-splits">5. Порівняння тренувальних схем</a></li>
+            </ul>
+            <div style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;gap:0.48rem;">
+              <button type="button" class="btn btn-outline btn-xs" data-print-page><span data-icon="printer"></span>Роздрукувати / PDF</button>
+              <button type="button" class="btn btn-outline btn-xs" data-open-studio><span data-icon="sliders"></span>Шрифт і 8 тем RS3</button>
+              <a class="btn btn-primary btn-xs" href="biomechanics.html"><span data-icon="gauge"></span>Нова стаття VBT і штанга</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Основний вміст статті -->
+        <article class="article-prose">
+          <section id="sec-intro">
+            <h2>1. Від хаотичної втоми до керованої суперкомпенсації</h2>
+            <p>
+              Найпоширеніша помилка більшості відвідувачів залів — ототожнення крайнього виснаження з ефективністю тренування. З погляду фізіології спорту тренувальна сесія є лише <strong>контрольованим катаболічним стимулом</strong>, який тимчасово знижує працездатність організму. Реальне зростання сили, щільності міофібрил та ударного об’єму серця відбувається виключно у фазі відновлення та <strong>суперкомпенсації</strong>.
+            </p>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/diagram-supercompensation.svg"
+                alt="Наукова діаграма чотирьох фаз кривої гомеостазу: гостра втома, відновлення, суперкомпенсація та інволюція сліду"
+                width="960"
+                height="420"
+              >
+              <figcaption>
+                Рис. 1. Класична біохімічна крива адаптації (за М. Яковлєвим): повторне навантаження дає стабільний прогрес лише у вікні суперкомпенсації (натисніть на діаграму для збільшення).
+              </figcaption>
+            </figure>
+
+            <div class="example-card">
+              <div class="example-header">
+                <span class="example-tag"><span data-icon="zap"></span>Приклад №1 • Клінічний кейс</span>
+                <strong>Чому «щоденні відмови» зупиняють ріст результатів</strong>
+              </div>
+              <p style="margin-bottom:0;">
+                Атлет А тренує жим штанги лежачи тричі на тиждень до повної м’язової відмови (RPE 10) — через хронічне перевантаження мотонейронів ЦНС робоча вага падає з 90 кг до 82,5 кг. Атлет Б працює із запасом у 2 повторення (<strong>RIR 2 / RPE 8</strong>): важка сесія у понеділок (85% 1ПМ) та швидкісно-технічна у четвер (72% 1ПМ). За 8 тижнів його результат зростає з 90 кг до <strong>102,5 кг</strong>.
+              </p>
+            </div>
+          </section>
+
+          <section id="sec-hr-zones">
+            <h2>2. Пульсові зони інтенсивності та точний розрахунок за Карвоненом</h2>
+            <p>
+              Спрощена формула «220 мінус вік» дає похибку до ±12 ударів за хвилину, оскільки ігнорує тренованість міокарда у спокої. У клубі APEX ми застосовуємо <strong>рівняння Танаки</strong> для максимальної ЧСС у поєднанні з <strong>методом резерву пульсу Карвонена</strong>.
+            </p>
+
+            <div class="formula-box">
+              HR_max = 208 − (0.7 × Вік)<br>
+              HR_reserve (резерв ЧСС) = HR_max − HR_спокою<br>
+              Цільовий пульс зони = HR_спокою + (HR_reserve × Коефіцієнт інтенсивності)
+            </div>
+
+            <div class="example-card">
+              <div class="example-header">
+                <span class="example-tag"><span data-icon="heart"></span>Приклад №2 • Покроковий розрахунок</span>
+                <strong>Визначення аеробної Зони 2 для атлета віком 20 років</strong>
+              </div>
+              <p style="margin-bottom:0;">
+                <strong>Дано:</strong> вік = 20 років; ранковий пульс у спокої = 56 уд/хв; цільовий коридор Зони 2 = 60%–70%.<br>
+                1. Максимум за Танакою: <code>208 − (0,7 × 20) = 194 уд/хв</code>.<br>
+                2. Резерв пульсу: <code>194 − 56 = 138 уд/хв</code>.<br>
+                3. Нижня межа (60%): <code>56 + (138 × 0,60) ≈ 139 уд/хв</code> • Верхня межа (70%): <code>56 + (138 × 0,70) ≈ 153 уд/хв</code>.<br>
+                <strong>Висновок:</strong> персональний коридор окиснення жирів становить <strong>139–153 уд/хв</strong>.
+              </p>
+            </div>
+
+            <!-- Модернізована таблиця №1 -->
+            <div class="table-card">
+              <div class="table-toolbar">
+                <div class="table-toolbar-title">
+                  <strong><span data-icon="activity"></span>Таблиця 1. Біоенергетична класифікація пульсових зон</strong>
+                  <span>Сортуйте стовпці або вивантажуйте таблицю у файл CSV</span>
+                </div>
+                <div class="table-controls">
+                  <input
+                    type="search"
+                    class="table-search"
+                    data-table-search="#hr-science-table"
+                    placeholder="Пошук зони чи палива..."
+                    aria-label="Пошук у таблиці пульсових зон"
+                  >
+                </div>
+              </div>
+
+              <div class="table-scroll">
+                <table class="modern-table" id="hr-science-table">
+                  <caption>Фізіологічні характеристики п'яти пульсових зон інтенсивності</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" data-sort="text">Зона ЧСС</th>
+                      <th scope="col" data-sort="num">% від резерву</th>
+                      <th scope="col" data-sort="num">Лактат крові</th>
+                      <th scope="col" data-sort="text">Основне паливо</th>
+                      <th scope="col" data-sort="num">Внесок жирів</th>
+                      <th scope="col" data-sort="text">Тривалість</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="badge badge-z1">Z1 • Активна регенерація</span></td>
+                      <td data-value="55">50–60%</td>
+                      <td data-value="1.2">&lt; 1,5 ммоль/л</td>
+                      <td>Вільні жирні кислоти</td>
+                      <td data-value="85"><div class="cell-meter"><span>85%</span><div class="meter-track"><div class="meter-fill" style="width:85%;"></div></div></div></td>
+                      <td>30–90 хвилин</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z2">Z2 • Аеробний фундамент</span></td>
+                      <td data-value="65">60–70%</td>
+                      <td data-value="1.8">1,5–2,0 ммоль/л</td>
+                      <td>Жири + м’язовий глікоген</td>
+                      <td data-value="68"><div class="cell-meter"><span>68%</span><div class="meter-track"><div class="meter-fill" style="width:68%;"></div></div></div></td>
+                      <td>40–120 хвилин</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z3">Z3 • Аеробно-темпова</span></td>
+                      <td data-value="75">70–80%</td>
+                      <td data-value="3.1">2,1–3,8 ммоль/л</td>
+                      <td>Глікоген + тригліцериди</td>
+                      <td data-value="38"><div class="cell-meter"><span>38%</span><div class="meter-track"><div class="meter-fill" style="width:38%;"></div></div></div></td>
+                      <td>20–45 хвилин</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z4">Z4 • Анаеробний поріг</span></td>
+                      <td data-value="85">80–90%</td>
+                      <td data-value="5.4">4,0–6,5 ммоль/л</td>
+                      <td>Анаеробний гліколіз</td>
+                      <td data-value="12"><div class="cell-meter"><span>12%</span><div class="meter-track"><div class="meter-fill" style="width:12%;"></div></div></div></td>
+                      <td>Інтервали по 3–8 хв</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z5">Z5 • Нейром’язовий пік</span></td>
+                      <td data-value="95">90–100%</td>
+                      <td data-value="9.5">&gt; 8,0 ммоль/л</td>
+                      <td>Креатинфосфат + глюкоза</td>
+                      <td data-value="3"><div class="cell-meter"><span>3%</span><div class="meter-track"><div class="meter-fill" style="width:3%;"></div></div></div></td>
+                      <td>Спринти по 15–60 с</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-scroll-hint">↔ Гортайте таблицю горизонтально на вузькому екрані</div>
+            </div>
+          </section>
+
+          <section id="sec-calculators">
+            <h2>3. Потрійна інтерактивна лабораторія APEX RS3</h2>
+            <p>
+              У збірці v3.1 RS3 обчислювальний блок поєднує три живі калькулятори: пульсові коридори Карвонена, силовий максимум 1ПМ за Еплі та добову матрицю калорій і нутрієнтів КБЖВ за рівнянням Міффліна — Сан-Жеора.
+            </p>
+
+            <div class="calc-panel">
+              <div class="calc-grid">
+                <!-- Калькулятор 1: ЧСС -->
+                <div class="calc-output">
+                  <h3><span data-icon="heart"></span> 1. Пульсові зони Карвонена</h3>
+                  <div class="form-row-2">
+                    <div class="form-group">
+                      <label for="hr-age">Вік (років):</label>
+                      <input type="number" id="hr-age" class="form-control" min="14" max="90" value="20">
+                    </div>
+                    <div class="form-group">
+                      <label for="hr-rest">ЧСС спокою (уд/хв):</label>
+                      <input type="number" id="hr-rest" class="form-control" min="38" max="110" value="58">
+                    </div>
+                  </div>
+                  <p style="font-size:0.86rem;margin-bottom:0.35rem;">
+                    Максимум ЧСС: <strong id="hr-max-val">194 уд/хв</strong>
+                  </p>
+                  <ul class="zone-result-list" id="hr-zones-output" aria-live="polite"></ul>
+                </div>
+
+                <!-- Калькулятор 2: 1ПМ -->
+                <div class="calc-output">
+                  <h3><span data-icon="dumbbell"></span> 2. Силовий максимум (1ПМ)</h3>
+                  <div class="form-row-2">
+                    <div class="form-group">
+                      <label for="rm-weight">Вага снаряда (кг):</label>
+                      <input type="number" id="rm-weight" class="form-control" min="10" max="450" step="2.5" value="80">
+                    </div>
+                    <div class="form-group">
+                      <label for="rm-reps">Повторення (1–15):</label>
+                      <input type="number" id="rm-reps" class="form-control" min="1" max="15" value="6">
+                    </div>
+                  </div>
+                  <p style="font-size:0.86rem;margin-bottom:0.35rem;">
+                    Розрахунковий 1ПМ: <strong id="rm-max-val">96.0 кг</strong>
+                  </p>
+                  <ul class="zone-result-list" id="rm-zones-output" aria-live="polite"></ul>
+                </div>
+              </div>
+
+              <!-- Калькулятор 3: TDEE + КБЖВ + Гідратація -->
+              <div class="calc-output" style="margin-top:1.35rem;">
+                <h3><span data-icon="calculator"></span> 3. Калькулятор добової енергії TDEE, балансу КБЖВ та води</h3>
+                <div class="grid-3" style="margin-top:0.75rem;gap:0.85rem;">
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label for="macro-mass">Маса тіла (кг):</label>
+                    <input type="number" id="macro-mass" class="form-control" min="40" max="180" value="75">
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label for="macro-height">Зріст (см):</label>
+                    <input type="number" id="macro-height" class="form-control" min="140" max="220" value="178">
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label for="macro-age">Вік (років):</label>
+                    <input type="number" id="macro-age" class="form-control" min="14" max="85" value="20">
+                  </div>
+                </div>
+                <div class="form-row-2" style="margin-top:0.85rem;">
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label for="macro-activity">Рівень фізичної активності:</label>
+                    <select id="macro-activity" class="form-control">
+                      <option value="1.375">Помірний (2–3 тренування / тиждень)</option>
+                      <option value="1.55" selected>Високий (3–5 тренувань / тиждень)</option>
+                      <option value="1.725">Інтенсивний спорт (6+ сесій / тиждень)</option>
+                    </select>
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label for="macro-goal">Спортивна мета раціону:</label>
+                    <select id="macro-goal" class="form-control">
+                      <option value="0.86">Рельєф і зниження жиру (−14%)</option>
+                      <option value="1.0" selected>Якісна рекомпозиція та баланс (0%)</option>
+                      <option value="1.10">Набір сухої м’язової маси (+10%)</option>
+                    </select>
+                  </div>
+                </div>
+                <ul class="zone-result-list" id="macro-output" style="margin-top:0.9rem;" aria-live="polite"></ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec-periodization">
+            <h2>4. Хвильова періодизація (DUP) та приклади силової прогресії</h2>
+            <p>
+              Лінійне додавання ваги щотижня працює лише на початковому етапі. Для стабільного багаторічного росту ми застосовуємо <strong>щоденну хвильову періодизацію (DUP)</strong>, змінюючи обсяг, інтенсивність та швидкість руху снаряда в межах 4-тижневого мезоциклу.
+            </p>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/article-periodization.jpg"
+                alt="Спортсмен фіксує симетричний хват на грифі олімпійської штанги перед початком важкого підходу станової тяги"
+                width="1280"
+                height="720"
+                loading="lazy"
+              >
+              <figcaption>
+                Рис. 2. Симетричний хват, жорстка фіксація кора та нейтральна вісь хребта у становій тязі дозволяють реалізувати силовий потенціал без ризику перевантаження попереку.
+              </figcaption>
+            </figure>
+
+            <div class="example-card">
+              <div class="example-header">
+                <span class="example-tag"><span data-icon="dumbbell"></span>Приклад №3 • Подвійна прогресія</span>
+                <strong>Плавний перехід від 85 кг до 90 кг у присіданнях за 4 тижні</strong>
+              </div>
+              <p style="margin-bottom:0;">
+                Задаємо цільовий коридор <strong>4 підходи по 6–8 повторень</strong>:<br>
+                • Тиждень 1: <code>85 кг × 6, 6, 6, 6</code> (RPE 7.5) → Тиждень 2: <code>85 кг × 7, 7, 7, 6</code> → Тиждень 3: <code>85 кг × 8, 8, 8, 8</code> (коридор закрито!) → Тиждень 4: перехід на <strong>90 кг × 6, 6, 6, 6</strong>.
+              </p>
+            </div>
+
+            <!-- Модернізована таблиця №2 -->
+            <div class="table-card">
+              <div class="table-toolbar">
+                <div class="table-toolbar-title">
+                  <strong><span data-icon="table"></span>Таблиця 2. Чотиритижневий мезоцикл DUP (база 1ПМ = 100 кг)</strong>
+                  <span>Включає 3 ударні тижні та 4-й розвантажувальний тиждень Deload</span>
+                </div>
+              </div>
+
+              <div class="table-scroll">
+                <table class="modern-table" id="dup-mesocycle-table">
+                  <caption>Приклад чотиритижневого силового мезоциклу з розрахунком тоннажу</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" data-sort="text">Етап мезоциклу</th>
+                      <th scope="col" data-sort="text">Підходи × Повт.</th>
+                      <th scope="col" data-sort="num">% від 1ПМ</th>
+                      <th scope="col" data-sort="num">Робоча вага</th>
+                      <th scope="col" data-sort="num">Сумарний тоннаж</th>
+                      <th scope="col" data-sort="text">Важкість RPE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Тиждень 1 • Втягувальний обсяг</strong></td>
+                      <td>4 × 8 повторень</td>
+                      <td data-value="72.5">72,5%</td>
+                      <td data-value="72.5">72,5 кг</td>
+                      <td data-value="2320"><div class="cell-meter"><span>2 320 кг</span><div class="meter-track"><div class="meter-fill" style="width:82%;"></div></div></div></td>
+                      <td><span class="badge badge-z2">RPE 7.5</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Тиждень 2 • Силова гіпертрофія</strong></td>
+                      <td>5 × 6 повторень</td>
+                      <td data-value="77.5">77,5%</td>
+                      <td data-value="77.5">77,5 кг</td>
+                      <td data-value="2325"><div class="cell-meter"><span>2 325 кг</span><div class="meter-track"><div class="meter-fill" style="width:83%;"></div></div></div></td>
+                      <td><span class="badge badge-z3">RPE 8.0</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Тиждень 3 • Піковий стимул сили</strong></td>
+                      <td>5 × 4 повторення</td>
+                      <td data-value="85">85,0%</td>
+                      <td data-value="85">85,0 кг</td>
+                      <td data-value="1700"><div class="cell-meter"><span>1 700 кг</span><div class="meter-track"><div class="meter-fill" style="width:62%;"></div></div></div></td>
+                      <td><span class="badge badge-z5">RPE 9.0</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Тиждень 4 • Активний Deload</strong></td>
+                      <td>3 × 6 повторень</td>
+                      <td data-value="65">65,0%</td>
+                      <td data-value="65">65,0 кг</td>
+                      <td data-value="1170"><div class="cell-meter"><span>1 170 кг</span><div class="meter-track"><div class="meter-fill" style="width:42%;"></div></div></div></td>
+                      <td><span class="badge badge-z1">RPE 6.0</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-scroll-hint">↔ Проведіть пальцем горизонтально для перегляду всіх розрахунків</div>
+            </div>
+          </section>
+
+          <section id="sec-splits">
+            <h2>5. Вибір оптимальної тренувальної архітектури на тиждень</h2>
+            <p>
+              Для стабільного синтезу м’язового білка кожну велику групу м’язів варто навантажувати <strong>двічі на тиждень</strong> сумарним обсягом 10–18 робочих підходів. Зіставте основні архітектури сплітів у таблиці нижче.
+            </p>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/article-biomechanics.jpg"
+                alt="Атлет виконує спринтерський біг на вигнутій механічній доріжці у біомеханічній лабораторії клубу"
+                width="1280"
+                height="720"
+                loading="lazy"
+              >
+              <figcaption>
+                Рис. 3. Гібридна схема тренувань поєднує силові базові дні з кардіосесіями на вигнутій доріжці або у басейні без взаємної інтерференції результатів.
+              </figcaption>
+            </figure>
+
+            <!-- Модернізована таблиця №3 -->
+            <div class="table-card">
+              <div class="table-toolbar">
+                <div class="table-toolbar-title">
+                  <strong><span data-icon="layers"></span>Таблиця 3. Порівняння популярних тренувальних сплітів</strong>
+                  <span>Доступний пошук, сортування за днями та завантаження CSV</span>
+                </div>
+                <div class="table-controls">
+                  <input
+                    type="search"
+                    class="table-search"
+                    data-table-search="#splits-table"
+                    placeholder="Пошук спліту чи рівня..."
+                    aria-label="Пошук у таблиці тренувальних сплітів"
+                  >
+                </div>
+              </div>
+
+              <div class="table-scroll">
+                <table class="modern-table" id="splits-table">
+                  <caption>Порівняльний аналіз тренувальних сплітів за частотою та рівнем підготовки</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" data-sort="text">Назва архітектури</th>
+                      <th scope="col" data-sort="num">Днів / тиждень</th>
+                      <th scope="col" data-sort="text">Частота на м’яз</th>
+                      <th scope="col" data-sort="text">Кому підходить найкраще</th>
+                      <th scope="col" data-sort="num">Баланс відновлення</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Full Body (Усе тіло за сесію)</strong></td>
+                      <td data-value="3">3 дні (Пн, Ср, Пт)</td>
+                      <td>3 рази / тиждень</td>
+                      <td>Початківці, студенти та ІТ-фахівці</td>
+                      <td data-value="94"><div class="cell-meter"><span>94%</span><div class="meter-track"><div class="meter-fill" style="width:94%;"></div></div></div></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Upper / Lower (Верх / Низ)</strong></td>
+                      <td data-value="4">4 дні (Пн, Вт, Чт, Пт)</td>
+                      <td>2 рази / тиждень</td>
+                      <td>Середній та просунутий рівень сили</td>
+                      <td data-value="91"><div class="cell-meter"><span>91%</span><div class="meter-track"><div class="meter-fill" style="width:91%;"></div></div></div></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Hybrid Athlete (Сила + Плавання/Біг)</strong></td>
+                      <td data-value="4">4–5 днів</td>
+                      <td>2 силові + 2 аеробні</td>
+                      <td>Універсальна функціональна форма</td>
+                      <td data-value="88"><div class="cell-meter"><span>88%</span><div class="meter-track"><div class="meter-fill" style="width:88%;"></div></div></div></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Push / Pull / Legs (Тягни-Штовхай-Ноги)</strong></td>
+                      <td data-value="6">5–6 днів</td>
+                      <td>2 рази / тиждень</td>
+                      <td>Досвідчені атлети з високим ресурсом сну</td>
+                      <td data-value="72"><div class="cell-meter"><span>72%</span><div class="meter-track"><div class="meter-fill" style="width:72%;"></div></div></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-scroll-hint">↔ Проведіть пальцем горизонтально, щоб побачити всі параметри</div>
+            </div>
+
+            <div class="pull-quote">
+              «Найкраща тренувальна програма — це система з прозорими цифрами, яку ви здатні виконувати стабільно весь рік із прогресією показників та повагою до відновлення».
+              <cite>— Максим Ковалишин, автор методичної платформи APEX v3.1 (build 197) RS3</cite>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark" data-icon="apex"></span>
+            <span>
+              APEX
+              <span class="brand-sub">Performance Club</span>
+            </span>
+          </a>
+          <p style="margin-top:0.9rem;font-size:0.89rem;">
+            Сучасний спортивний клуб доказової фізичної підготовки, цифрової біомеханіки VBT, важкої атлетики, плавання та системної регенерації.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="compass"></span>Навігація</h2>
+          <ul class="footer-links">
+            <li><a href="index.html"><span data-icon="home"></span>Головна та радар RS3</a></li>
+            <li><a href="topics.html"><span data-icon="layers"></span>12 тренувальних тем із фото</a></li>
+            <li><a href="article.html"><span data-icon="table"></span>Стаття №1: Таблиці й ЧСС</a></li>
+            <li><a href="journal.html"><span data-icon="book"></span>Стаття №2: Біоархітектура</a></li>
+            <li><a href="biomechanics.html"><span data-icon="gauge"></span>Стаття №3: VBT і біомеханіка</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="table"></span>Розділи статті</h2>
+          <ul class="footer-links">
+            <li><a href="#sec-intro"><span data-icon="activity"></span>Крива суперкомпенсації</a></li>
+            <li><a href="#sec-hr-zones"><span data-icon="heart"></span>Пульсові зони Z1–Z5</a></li>
+            <li><a href="#sec-calculators"><span data-icon="calculator"></span>Три живі калькулятори</a></li>
+            <li><a href="#sec-periodization"><span data-icon="barbell"></span>Хвильова періодизація</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="cpu"></span>Сервіси та SEO</h2>
+          <ul class="footer-links">
+            <li><a href="biomechanics.html#sec-plate-loader"><span data-icon="disc"></span>Конструктор штанги IWF</a></li>
+            <li><a href="about.html#booking"><span data-icon="calendar"></span>Запис на пробне тренування</a></li>
+            <li><a href="sitemap.xml"><span data-icon="globe"></span>Карта сайту XML (Sitemap)</a></li>
+            <li><a href="robots.txt"><span data-icon="shield"></span>Правила індексації (Robots)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p class="copyright-primary">
+          <span><span data-icon="lock"></span> <strong>© 2026 Спортивний клуб «APEX». Автор і розробник проєкту: Максим Ковалишин. Усі права захищено.</strong></span>
+          <button type="button" class="build-pill" data-open-build>v3.1 (build 197) RS3</button>
+        </p>
+        <p class="copyright-secondary">
+          Увесь вміст цього вебсайту — авторські статті, практичні розрахунки, модернізовані таблиці, графічні матеріали, векторна іконографіка, дизайн інтерфейсу та вихідний програмний код — є об’єктом авторського права й охороняється відповідно до Закону України «Про авторське право і суміжні права» та міжнародних конвенцій. Будь-яке копіювання, відтворення чи поширення матеріалів без попередньої письмової згоди автора заборонено.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Прокрутити сторінку вгору"></button>
+  <script src="script.js"></script>
+</body>
+</html>

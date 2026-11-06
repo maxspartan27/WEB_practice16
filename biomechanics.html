@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="obsidian">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Біомеханіка VBT і телеметрія — Спортивний клуб APEX</title>
+  <meta name="description" content="Нова стаття Максима Ковалишина v3.1 RS3 про трекінг швидкості штанги VBT, біомеханіку важелів, конструктор дисків та готовність ЦНС.">
+  <meta name="author" content="Максим Ковалишин">
+  <meta name="theme-color" content="#080b12">
+  <link rel="canonical" href="https://maxspartan27.github.io/biomechanics.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content="Біомеханіка VBT і телеметрія — Спортивний клуб APEX">
+  <meta property="og:description" content="Нова стаття Максима Ковалишина v3.1 RS3 про трекінг швидкості штанги VBT, біомеханіку важелів, конструктор дисків та готовність ЦНС.">
+  <meta property="og:url" content="https://maxspartan27.github.io/biomechanics.html">
+  <meta property="og:image" content="https://maxspartan27.github.io/images/article-biomechanics.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("apex-ui-theme");
+        if (["obsidian", "daylight", "biolab", "amethyst", "titan", "cyber", "crimson", "nordic"].indexOf(t) !== -1) {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+        var f = localStorage.getItem("apex-font-scale");
+        if (f === "lg" || f === "xl") {
+          document.documentElement.setAttribute("data-font-scale", f);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Цифрова біомеханіка руху, трекінг швидкості штанги (VBT) та діагностика готовності ЦНС",
+    "author": {
+      "@type": "Person",
+      "name": "Максим Ковалишин"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Спортивний клуб APEX"
+    },
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "image": "https://maxspartan27.github.io/images/article-biomechanics.jpg"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html" aria-label="Спортивний клуб APEX — на головну сторінку">
+          <span class="brand-mark" data-icon="apex"></span>
+          <span>
+            APEX
+            <span class="brand-sub">Performance Club</span>
+          </span>
+        </a>
+        <button type="button" class="build-pill" data-open-build title="Відкрити технічний паспорт v3.1 (build 197) RS3">
+          <span data-icon="cpu"></span>v3.1 <span>• b197 RS3</span>
+        </button>
+      </div>
+
+      <nav class="main-nav" id="primary-navigation" aria-label="Головна навігація сайту">
+        <a class="nav-link" href="index.html"><span data-icon="home"></span>Головна</a>
+        <a class="nav-link" href="topics.html"><span data-icon="layers"></span>Теми (12)</a>
+        <a class="nav-link" href="article.html"><span data-icon="table"></span>Періодизація</a>
+        <a class="nav-link" href="journal.html"><span data-icon="book"></span>Біоархітектура</a>
+        <a class="nav-link active" href="biomechanics.html" aria-current="page"><span data-icon="gauge"></span>VBT-стаття</a>
+        <a class="nav-link" href="about.html"><span data-icon="shield"></span>Про клуб</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-action-btn" data-open-palette title="Швидкий пошук по сайту (Ctrl+K)" aria-label="Швидкий пошук по сайту">
+          <span data-icon="search"></span>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+
+        <button type="button" class="icon-action-btn" data-open-plan title="Мій персональний список тренувальних тем" aria-label="Відкрити мій план тренувань">
+          <span data-icon="bookmark"></span>
+          <span class="plan-count-badge">0</span>
+        </button>
+
+        <div class="theme-switcher" role="group" aria-label="Швидкий перемикач 8 колірних тем">
+          <button type="button" class="theme-btn active" data-set-theme="obsidian" aria-pressed="true" title="Тема Вулкан" aria-label="Тема Вулкан"><span data-icon="flame"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="daylight" aria-pressed="false" title="Тема Кварц" aria-label="Тема Кварц"><span data-icon="sun"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="biolab" aria-pressed="false" title="Тема Біолаб" aria-label="Тема Біолаб"><span data-icon="activity"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="amethyst" aria-pressed="false" title="Тема Імпульс" aria-label="Тема Імпульс"><span data-icon="sparkles"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="titan" aria-pressed="false" title="Тема Титан" aria-label="Тема Титан"><span data-icon="award"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="cyber" aria-pressed="false" title="Тема Крига" aria-label="Тема Крига"><span data-icon="snowflake"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="crimson" aria-pressed="false" title="Тема Рубін (NEW RS3)" aria-label="Тема Рубін"><span data-icon="crimson"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="nordic" aria-pressed="false" title="Тема Срібло (NEW RS3)" aria-label="Тема Срібло"><span data-icon="leaf"></span></button>
+        </div>
+
+        <button type="button" class="icon-action-btn" data-open-studio title="Відкрити студію 8 тем і розміру шрифту">
+          <span data-icon="palette"></span>
+          <span class="icon-action-label">Теми</span>
+        </button>
+
+        <a class="btn btn-primary btn-sm header-cta-desktop" href="about.html#booking">Записатися</a>
+
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Відкрити меню навігації"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Навігаційний ланцюжок">
+          <li><a href="index.html">Головна</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Нова стаття v3.1 RS3: Цифрова біомеханіка VBT і телеметрія</li>
+        </ol>
+        <span class="eyebrow"><span data-icon="gauge"></span>Нова науково-інженерна стаття • Реліз v3.1 (build 197) RS3</span>
+        <h1>Цифрова біомеханіка руху, трекінг швидкості штанги (VBT) та готовність ЦНС</h1>
+        <div class="article-meta-bar">
+          <span class="article-meta-item"><span data-icon="award"></span>Автор: <strong>Максим Ковалишин</strong></span>
+          <span class="article-meta-item"><span data-icon="calendar"></span>Опубліковано: <time datetime="2026-11-06">6 листопада 2026</time></span>
+          <span class="article-meta-item"><span data-icon="timer"></span>Час читання: 14 хвилин</span>
+          <span class="badge badge-accent"><span data-icon="barbell"></span>2 симулятори RS3 + конструктор штанги + 2 таблиці</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-layout">
+        <!-- Бічна навігація по новій статті -->
+        <aside class="article-sidebar" aria-label="Зміст статті про біомеханіку VBT">
+          <div class="toc-card">
+            <div class="toc-title"><span data-icon="compass"></span>Навігація статтею</div>
+            <ul class="toc-list">
+              <li><a class="toc-link active" href="#sec-vbt-core">1. Суть методу VBT (м/с)</a></li>
+              <li><a class="toc-link" href="#sec-levers">2. Біомеханіка важелів і кутів</a></li>
+              <li><a class="toc-link" href="#sec-plate-loader">3. Симулятор штанги IWF</a></li>
+              <li><a class="toc-link" href="#sec-vbt-lab">4. Лабораторія ЦНС та VBT</a></li>
+              <li><a class="toc-link" href="#sec-kinematics-audit">5. Аудит базових вправ</a></li>
+            </ul>
+            <div style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;gap:0.48rem;">
+              <button type="button" class="btn btn-outline btn-xs" data-print-page><span data-icon="printer"></span>Роздрукувати / PDF</button>
+              <button type="button" class="btn btn-outline btn-xs" data-share-page><span data-icon="share"></span>Скопіювати посилання</button>
+              <button type="button" class="btn btn-outline btn-xs" data-open-studio><span data-icon="palette"></span>Студія 8 тем RS3</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Основний вміст статті №3 -->
+        <article class="article-prose">
+          <section id="sec-vbt-core">
+            <h2>1. Чому фіксовані відсотки від 1ПМ поступаються швидкості штанги (VBT)</h2>
+            <p>
+              У класичному силовому тренінгу робоча вага задається відсотком від одноповторного максимуму (наприклад, 80% 1ПМ). Проте нейрофізіологічні дослідження доводять: <strong>реальний щоденний максимум атлета коливається в межах ±18%</strong> залежно від глибини сну, гідратації, навчального чи робочого стресу та залишкової втоми центральної нервової системи. Те, що в понеділок після вихідних відчувалося як 80%, у п’ятницю може фактично становити 92% поточного ресурсу.
+            </p>
+            <p>
+              Саме цю проблему вирішує <strong>Velocity-Based Training (VBT)</strong> — технологія керування навантаженням за <em>середньою концентричною швидкістю руху грифа</em> (Mean Concentric Velocity, м/с), яку в залі спортивного клубу <strong>APEX</strong> зчитують оптичні та лінійні енкодери на силових рамах.
+            </p>
+
+            <!-- Піктографічна матриця 6 стовпів телеметрії RS3 -->
+            <div class="pictogram-grid" style="margin-block:1.5rem;" aria-label="Шість векторних піктограм цифрової біомеханіки">
+              <div class="pictogram-tile">
+                <div class="pictogram-glyph" data-icon="gauge"></div>
+                <strong>Швидкість м/с</strong>
+                <span>Точний маркер %1ПМ</span>
+              </div>
+              <div class="pictogram-tile">
+                <div class="pictogram-glyph" data-icon="barbell"></div>
+                <strong>Траєкторія грифа</strong>
+                <span>Вісь над Mid-Foot</span>
+              </div>
+              <div class="pictogram-tile">
+                <div class="pictogram-glyph" data-icon="brain"></div>
+                <strong>Імпульс ЦНС</strong>
+                <span>Рекрутинг волокон IIx</span>
+              </div>
+              <div class="pictogram-tile">
+                <div class="pictogram-glyph" data-icon="watch"></div>
+                <strong>Індекс HRV</strong>
+                <span>Варіабельність ритму</span>
+              </div>
+              <div class="pictogram-tile">
+                <div class="pictogram-glyph" data-icon="disc"></div>
+                <strong>Калібровка IWF</strong>
+                <span>Похибка ваги &lt; 10 г</span>
+              </div>
+              <div class="pictogram-tile">
+                <div class="pictogram-glyph" data-icon="flask"></div>
+                <strong>Поріг втоми</strong>
+                <span>Velocity Loss 20%</span>
+              </div>
+            </div>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/diagram-vbt-zones.svg"
+                alt="Векторна діаграма чотирьох швидкісних зон штанги VBT від 1.30 м/с до 0.18 м/с залежно від відсотка 1ПМ"
+                width="960"
+                height="440"
+              >
+              <figcaption>
+                Рис. 1. Авторська крива «Навантаження — Швидкість» клубу APEX RS3: кожному діапазону відносної ваги відповідає стабільний коридор швидкості підйому штанги (натисніть для збільшення).
+              </figcaption>
+            </figure>
+
+            <div class="example-card">
+              <div class="example-header">
+                <span class="example-tag"><span data-icon="zap"></span>Приклад №1 • Авторегуляція за першим підходом</span>
+                <strong>Як датчик швидкості рятує від травми та перетренованості</strong>
+              </div>
+              <p style="margin-bottom:0;">
+                Атлет планує присідання <strong>5 × 4 зі штангою 130 кг</strong> (цільова швидкість для 85% 1ПМ у присіданні становить <code>0,43–0,46 м/с</code>). Після безсонної ночі перший робочий повтор на 130 кг демонструє лише <code>0,33 м/с</code> — це відповідає реальним 93% сьогоднішнього максимуму! Замість «ламати» техніку, атлет знижує вагу на <strong>−7% (до 120 кг)</strong>, повертає швидкість у коридор <code>0,45 м/с</code> і отримує ідеальний силовий стимул без виснаження ЦНС.
+              </p>
+            </div>
+
+            <!-- Модернізована таблиця №1: Шкала зон VBT -->
+            <div class="table-card">
+              <div class="table-toolbar">
+                <div class="table-toolbar-title">
+                  <strong><span data-icon="gauge"></span>Таблиця 1. Шкала швидкісних зон VBT та цільових адаптацій</strong>
+                  <span>Підтримується копіювання у буфер обміну, сортування, компактний режим і CSV</span>
+                </div>
+                <div class="table-controls">
+                  <input
+                    type="search"
+                    class="table-search"
+                    data-table-search="#vbt-zones-table"
+                    placeholder="Пошук зони чи швидкості..."
+                    aria-label="Пошук у таблиці швидкісних зон VBT"
+                  >
+                </div>
+              </div>
+
+              <div class="table-scroll">
+                <table class="modern-table" id="vbt-zones-table">
+                  <caption>Класифікація тренувальних зон за середньою концентричною швидкістю штанги</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" data-sort="text">Назва швидкісної зони</th>
+                      <th scope="col" data-sort="num">Швидкість (м/с)</th>
+                      <th scope="col" data-sort="num">Відсоток 1ПМ</th>
+                      <th scope="col" data-sort="num">Ліміт втрати VL</th>
+                      <th scope="col" data-sort="text">Біомеханічний ефект</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="badge badge-z1">1. Стартова швидкість</span></td>
+                      <td data-value="1.35">&gt; 1,30 м/с</td>
+                      <td data-value="30">20–35% 1ПМ</td>
+                      <td data-value="10">до 10%</td>
+                      <td>Балістичні вистрибування, кидки медбола, еластичність сухожиль</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z1">2. Швидкісна сила</span></td>
+                      <td data-value="1.1">1,00–1,30 м/с</td>
+                      <td data-value="45">35–55% 1ПМ</td>
+                      <td data-value="12">10–15%</td>
+                      <td>Максимальна швидкість наростання сили (RFD) у спринті й боксі</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z2">3. Силова швидкість</span></td>
+                      <td data-value="0.85">0,75–1,00 м/с</td>
+                      <td data-value="65">55–72% 1ПМ</td>
+                      <td data-value="15">15%</td>
+                      <td>Динамічні жими й тяги, підрив в олімпійській важкій атлетиці</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z3">4. Прискорювальна сила</span></td>
+                      <td data-value="0.58">0,45–0,75 м/с</td>
+                      <td data-value="78">72–85% 1ПМ</td>
+                      <td data-value="20">20–25%</td>
+                      <td>Функціональна гіпертрофія швидких м’язових волокон IIa</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-z5">5. Абсолютна сила</span></td>
+                      <td data-value="0.28">0,18–0,45 м/с</td>
+                      <td data-value="92">86–100% 1ПМ</td>
+                      <td data-value="15">10–15%</td>
+                      <td>Внутрішньом’язова координація та змагальний максимум 1ПМ</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-scroll-hint">↔ Проведіть пальцем горизонтально для огляду всіх стовпців</div>
+            </div>
+          </section>
+
+          <section id="sec-levers">
+            <h2>2. Біомеханіка суглобових важелів, крутного моменту та вектора опори</h2>
+            <p>
+              У будь-якій вправі з вільним обтяженням м’язи долають не просто масу штанги, а <strong>крутний момент сили</strong>: \( M = F \times d \), де \( F \) — вага системи «атлет + снаряд», а \( d \) — перпендикулярна відстань (плече важеля) від осі обертання суглоба до вертикальної лінії гравітації грифа.
+            </p>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/diagram-force-vectors.svg"
+                alt="Інженерна схема плечей крутного моменту таза d1, коліна d2 та осі гравітації штанги над серединою стопи"
+                width="960"
+                height="440"
+                loading="lazy"
+              >
+              <figcaption>
+                Рис. 2. Кінематичний розбір глибокого присідання: чим точніше гриф рухається вздовж вертикалі над серединою стопи (Mid-Foot), тим вищий ККД підйому.
+              </figcaption>
+            </figure>
+
+            <div class="example-card">
+              <div class="example-header">
+                <span class="example-tag"><span data-icon="flask"></span>Приклад №2 • Поріг втрати швидкості (Velocity Loss 20%)</span>
+                <strong>Скільки повторень робити у підході для чистих м’язів без «закислення»</strong>
+              </div>
+              <p style="margin-bottom:0;">
+                Якщо перший повтор жиму лежачи з вагою 85 кг виконується зі швидкістю <code>0,60 м/с</code>, то 20% втрати швидкості настає на позначці <strong>0,48 м/с</strong> (зазвичай 6-й або 7-й повтор). Зупинка підходу в цій точці забезпечує такий самий ріст поперечника грудних м’язів, як робота «до відмови» на 10-му повторі (<code>0,19 м/с</code>), але скорочує час відновлення нервової системи з 60 до <strong>28 годин</strong>!
+              </p>
+            </div>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/article-biomechanics.jpg"
+                alt="Спортсмен біжить на вигнутій безмоторній доріжці у біомеханічній лабораторії з візуалізацією кінематичних ліній"
+                width="1280"
+                height="720"
+                loading="lazy"
+              >
+              <figcaption>
+                Рис. 3. Аналіз кутів приземлення стопи та каденсу (176–184 кроків/хв) на вигнутій безмоторній доріжці Endurance Lab клубу APEX.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="sec-plate-loader">
+            <h2>3. Інтерактивний конструктор олімпійської штанги IWF / IPF (NEW RS3)</h2>
+            <p>
+              Щоб не витрачати концентрацію між важкими підходами на усний підрахунок дисків, скористайтеся живим візуальним конструктором штанги клубу APEX. Модуль автоматично розкладає будь-яку цільову вагу на <strong>кольорові калібровані бамперні диски стандарту IWF</strong> (червоний 25 кг, синій 20 кг, жовтий 15 кг, зелений 10 кг, білий 5 кг та фракційні 2,5 / 1,25 кг).
+            </p>
+
+            <div class="plate-loader-box" id="plate-loader-widget">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
+                <h3 style="margin:0;"><span data-icon="barbell"></span> Візуальний симулятор комплектації штанги</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+                  <button type="button" class="filter-btn" data-plate-preset="60">60 кг</button>
+                  <button type="button" class="filter-btn" data-plate-preset="100">100 кг</button>
+                  <button type="button" class="filter-btn" data-plate-preset="142.5">142.5 кг</button>
+                  <button type="button" class="filter-btn" data-plate-preset="185">185 кг</button>
+                  <button type="button" class="filter-btn" data-plate-preset="225">225 кг</button>
+                </div>
+              </div>
+
+              <div class="grid-3" style="margin-top:1rem;gap:0.85rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="plate-target-weight">Цільова вага штанги (кг):</label>
+                  <input type="number" id="plate-target-weight" class="form-control" min="15" max="340" step="2.5" value="142.5">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="plate-bar-weight">Тип олімпійського грифа:</label>
+                  <select id="plate-bar-weight" class="form-control">
+                    <option value="20" selected>Чоловічий гриф IWF (20 кг)</option>
+                    <option value="15">Жіночий гриф IWF (15 кг)</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="plate-collar-weight">Змагальні замки:</label>
+                  <select id="plate-collar-weight" class="form-control">
+                    <option value="0" selected>Пружинні фіксатори (0 кг)</option>
+                    <option value="5">Хромовані замки IWF (5 кг пара)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="barbell-visualizer" aria-label="Графічна візуалізація правої втулки олімпійської штанги з дисками">
+                <div class="barbell-assembly">
+                  <div class="barbell-shaft-left"></div>
+                  <div class="barbell-flange"></div>
+                  <div class="barbell-plates-stack" id="barbell-plates-stack"></div>
+                  <div class="barbell-collar-lock" id="barbell-collar-visual" hidden title="Змагальний замок 2.5 кг"></div>
+                  <div class="barbell-sleeve-tip"></div>
+                </div>
+              </div>
+
+              <p style="font-size:0.9rem;margin-bottom:0.5rem;">
+                Фактична зібрана маса: <strong id="plate-actual-total">142.5 кг</strong>
+              </p>
+              <ul class="zone-result-list" id="plate-summary-list" aria-live="polite"></ul>
+            </div>
+          </section>
+
+          <section id="sec-vbt-lab">
+            <h2>4. Діагностична лабораторія готовності ЦНС та швидкості VBT</h2>
+            <p>
+              Поєднання ранкової телеметрії смартгодинника (варіабельність серцевого ритму <strong>HRV rMSSD</strong> + тривалість сну) із фактичною швидкістю штанги дозволяє обчислити персональний <strong>Індекс готовності APEX Readiness Score (0–100)</strong> перед початком основної частини тренування.
+            </p>
+
+            <figure class="editorial-figure">
+              <img
+                src="images/feature-telemetry.jpg"
+                alt="Спортивний смартгодинник та біометричний фітнес-трекер з кільцями активності для контролю пульсу і сну"
+                width="1280"
+                height="720"
+                loading="lazy"
+              >
+              <figcaption>
+                Рис. 4. Носима телеметрія фіксує нічну варіабельність серцевого ритму (HRV) та пульс відновлення, формуючи об’єктивний прогноз готовності атлета до пікових ваг.
+              </figcaption>
+            </figure>
+
+            <div class="calc-panel" id="vbt-readiness-widget">
+              <h3 style="margin-top:0;"><span data-icon="brain"></span> Інтерактивний аналізатор «Готовність ЦНС + Авторегуляція VBT»</h3>
+              <div class="calc-grid">
+                <div class="calc-output">
+                  <div class="form-group">
+                    <label for="vbt-speed" style="display:flex;justify-content:space-between;">
+                      <span>Швидкість штанги в 1-му підході:</span>
+                      <strong id="vbt-speed-label" style="color:var(--accent-primary);">0.58 м/с</strong>
+                    </label>
+                    <input type="range" id="vbt-speed" class="radar-range" min="0.20" max="1.25" step="0.02" value="0.58">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="vbt-sleep" style="display:flex;justify-content:space-between;">
+                      <span>Тривалість нічного сну:</span>
+                      <strong id="vbt-sleep-label" style="color:var(--accent-primary);">7.5 год</strong>
+                    </label>
+                    <input type="range" id="vbt-sleep" class="radar-range" min="4.5" max="9.5" step="0.5" value="7.5">
+                  </div>
+                </div>
+
+                <div class="calc-output">
+                  <div class="form-group">
+                    <label for="vbt-hrv">Ранковий статус HRV (відносно норми):</label>
+                    <select id="vbt-hrv" class="form-control">
+                      <option value="12">Вище базового коридору (+10% • Суперкомпенсація)</option>
+                      <option value="5" selected>У межах персональної норми (Стабільний тонус)</option>
+                      <option value="-10">Нижче норми на 10–15% (Неповне відновлення)</option>
+                      <option value="-22">Різке просідання HRV (&gt;20% • Перевантаження)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label for="vbt-doms">Відчуття м’язової крепатури (DOMS):</label>
+                    <select id="vbt-doms" class="form-control">
+                      <option value="5" selected>Відсутня — м’язи свіжі та пружні</option>
+                      <option value="-4">Легка локальна чутливість після попередньої сесії</option>
+                      <option value="-14">Виражена крепатура та скутість амплітуди</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="zone-result-list" id="vbt-lab-output" style="margin-top:1rem;" aria-live="polite"></ul>
+            </div>
+          </section>
+
+          <section id="sec-kinematics-audit">
+            <h2>5. Кінематичний паспорт ключових багатосуглобових рухів</h2>
+            <p>
+              У підсумковій таблиці систематизовано біомеханічні орієнтири п’яти фундаментальних вправ силової арени APEX — від критичних кутів у суглобах до миттєвих технічних підказок тренера.
+            </p>
+
+            <div class="table-card">
+              <div class="table-toolbar">
+                <div class="table-toolbar-title">
+                  <strong><span data-icon="barbell"></span>Таблиця 2. Біомеханічний аудит базових рухів силової арени</strong>
+                  <span>Натисніть на рядок для фіксації кольором або збережіть у CSV / буфер обміну</span>
+                </div>
+                <div class="table-controls">
+                  <input
+                    type="search"
+                    class="table-search"
+                    data-table-search="#kinematics-audit-table"
+                    placeholder="Пошук вправи чи м'яза..."
+                    aria-label="Пошук у таблиці біомеханічного аудиту"
+                  >
+                </div>
+              </div>
+
+              <div class="table-scroll">
+                <table class="modern-table" id="kinematics-audit-table">
+                  <caption>Кінематичні параметри та типові технічні корекції базових вправ</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" data-sort="text">Базовий рух</th>
+                      <th scope="col" data-sort="text">Домінантні м’язи</th>
+                      <th scope="col" data-sort="num">Швидкість 1ПМ</th>
+                      <th scope="col" data-sort="text">Критичний вектор техніки</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Присідання зі штангою</strong></td>
+                      <td>Квадрицепс, сідничні, розгиначі спини</td>
+                      <td data-value="0.30">0,30 м/с</td>
+                      <td>Коліна рухаються строго в площині другого пальця стопи; жорсткий внутрішньочеревний тиск 360°</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Класична станова тяга</strong></td>
+                      <td>Біцепс стегна, сідничні, трапеції</td>
+                      <td data-value="0.17">0,17 м/с</td>
+                      <td>Попередній натяг грифа («вибір люфту» лопатками вниз) до моменту відриву дисків від помосту</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Жим штанги лежачи</strong></td>
+                      <td>Великі грудні, передні дельти, трицепс</td>
+                      <td data-value="0.18">0,18 м/с</td>
+                      <td>Ретракція та депресія лопаток, J-подібна траєкторія від низу грудини до лінії плечових суглобів</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Олімпійський поштовх (Clean)</strong></td>
+                      <td>Вибуховий потрійний розгин усього тіла</td>
+                      <td data-value="0.88">0,88 м/с</td>
+                      <td>Вертикальний підрив на повній стопі без раннього згинання рук у ліктях; швидкий прийом на передні дельти</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Підтягування з обтяженням</strong></td>
+                      <td>Найширші спини, круглі м’язи, плечопроменеві</td>
+                      <td data-value="0.24">0,24 м/с</td>
+                      <td>Старт із активної депресії лопаток при утриманні преса й сідниць у легкій «порожнистій» позиції (Hollow)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-scroll-hint">↔ Гортайте таблицю горизонтально на вузькому екрані</div>
+            </div>
+
+            <div class="card" style="margin-top:2rem;">
+              <h3>Продовжуйте дослідження наукової бази APEX RS3</h3>
+              <p>
+                Поєднайте цифрову біомеханіку штанги з розрахунком пульсових зон Карвонена та циркадною архітектурою відновлення в інших розділах нашого клубу:
+              </p>
+              <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+                <a class="btn btn-primary btn-sm" href="article.html"><span data-icon="calculator"></span>Стаття №1: Періодизація й 3 калькулятори</a>
+                <a class="btn btn-outline btn-sm" href="journal.html"><span data-icon="book"></span>Стаття №2: Біоархітектура й 5 ілюстрацій</a>
+                <a class="btn btn-outline btn-sm" href="topics.html"><span data-icon="layers"></span>Каталог 12 тренувальних тем</a>
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark" data-icon="apex"></span>
+            <span>
+              APEX
+              <span class="brand-sub">Performance Club</span>
+            </span>
+          </a>
+          <p style="margin-top:0.9rem;font-size:0.89rem;">
+            Сучасний спортивний клуб доказової фізичної підготовки, цифрової біомеханіки VBT, важкої атлетики, плавання та системної регенерації.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="compass"></span>Навігація</h2>
+          <ul class="footer-links">
+            <li><a href="index.html"><span data-icon="home"></span>Головна та радар RS3</a></li>
+            <li><a href="topics.html"><span data-icon="layers"></span>12 тренувальних тем із фото</a></li>
+            <li><a href="article.html"><span data-icon="table"></span>Стаття №1: Таблиці й ЧСС</a></li>
+            <li><a href="journal.html"><span data-icon="book"></span>Стаття №2: Біоархітектура</a></li>
+            <li><a href="biomechanics.html"><span data-icon="gauge"></span>Стаття №3: VBT і біомеханіка</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="wand"></span>Нові фішки v3.1 RS3</h2>
+          <ul class="footer-links">
+            <li><a href="index.html#radar-section"><span data-icon="radar"></span>5-осьовий радар атлета</a></li>
+            <li><a href="#sec-plate-loader"><span data-icon="barbell"></span>Конструктор штанги IWF</a></li>
+            <li><a href="#sec-vbt-lab"><span data-icon="brain"></span>Індекс готовності ЦНС</a></li>
+            <li><a href="topics.html#sprint"><span data-icon="footprints"></span>11. Спринт і пліометрика</a></li>
+            <li><a href="topics.html#cycling"><span data-icon="bike"></span>12. FTP Wattbike велолаб</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="cpu"></span>Сервіси та SEO</h2>
+          <ul class="footer-links">
+            <li><a href="about.html#booking"><span data-icon="calendar"></span>Онлайн-запис у клуб</a></li>
+            <li><a href="topics.html#apex-timer-section"><span data-icon="timer"></span>Таймер Tabata + Дихання</a></li>
+            <li><a href="sitemap.xml"><span data-icon="globe"></span>Карта сайту XML (Sitemap)</a></li>
+            <li><a href="robots.txt"><span data-icon="shield"></span>Правила індексації (Robots)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p class="copyright-primary">
+          <span><span data-icon="lock"></span> <strong>© 2026 Спортивний клуб «APEX». Автор і розробник проєкту: Максим Ковалишин. Усі права захищено.</strong></span>
+          <button type="button" class="build-pill" data-open-build>v3.1 (build 197) RS3</button>
+        </p>
+        <p class="copyright-secondary">
+          Увесь вміст цього вебсайту — авторські статті, практичні розрахунки, модернізовані таблиці, графічні матеріали, векторна іконографіка, дизайн інтерфейсу та вихідний програмний код — є об’єктом авторського права й охороняється відповідно до Закону України «Про авторське право і суміжні права» та міжнародних конвенцій. Будь-яке копіювання, відтворення чи поширення матеріалів без попередньої письмової згоди автора заборонено.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Прокрутити сторінку вгору"></button>
+  <script src="script.js"></script>
+</body>
+</html>

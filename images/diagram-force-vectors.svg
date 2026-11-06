@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-label="Біомеханічна діаграма важелів обертального моменту та осі гравітації у присіданні зі штангою">
+  <defs>
+    <linearGradient id="forceBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090d18"/>
+      <stop offset="100%" stop-color="#141e33"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff5e3a"/>
+      <stop offset="100%" stop-color="#ffb347"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="440" rx="22" fill="url(#forceBg)"/>
+  <rect x="16" y="16" width="928" height="408" rx="16" fill="none" stroke="#334155" stroke-width="1.2"/>
+
+  <text x="46" y="54" fill="#f8fafc" font-family="Inter, Segoe UI, sans-serif" font-size="20" font-weight="800">Біомеханічна модель плечей сил і вектора реакції опори (GRF)</text>
+  <text x="46" y="78" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="13">Оптимальна проєкція грифа над серединою стопи мінімізує зсувне навантаження на поперековий відділ L4–L5</text>
+
+  <!-- Ліва панель: Схема кінематичного ланцюга -->
+  <rect x="46" y="102" width="440" height="292" rx="16" fill="#0f172a" stroke="#26334d"/>
+
+  <!-- Поміст -->
+  <line x1="86" y1="354" x2="446" y2="354" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  <text x="266" y="378" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="12" text-anchor="middle">Амортизований поміст • Точка середини стопи (Mid-Foot)</text>
+
+  <!-- Вертикальна лінія гравітації штанги -->
+  <line x1="274" y1="120" x2="274" y2="354" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <text x="284" y="136" fill="#38bdf8" font-family="Consolas, monospace" font-size="12" font-weight="700">Вісь гравітації G</text>
+
+  <!-- Кінематичні сегменти тіла (Стопа -> Гомілка -> Стегно -> Корпус) -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Стопа -->
+    <line x1="236" y1="348" x2="312" y2="348" stroke="#cbd5e1" stroke-width="8"/>
+    <!-- Гомілка (Анкл -> Коліно) -->
+    <line x1="256" y1="348" x2="332" y2="262" stroke="#10b981" stroke-width="9"/>
+    <!-- Стегно (Коліно -> Кульшовий суглоб) -->
+    <line x1="332" y1="262" x2="196" y2="254" stroke="#f59e0b" stroke-width="10"/>
+    <!-- Тулуб (Кульшовий -> Плечі / Штанга) -->
+    <line x1="196" y1="254" x2="274" y2="158" stroke="#ff5e3a" stroke-width="10"/>
+  </g>
+
+  <!-- Плечі моменту сили (Moment Arms d_hip та d_knee) -->
+  <line x1="196" y1="254" x2="274" y2="254" stroke="#fbbf24" stroke-width="2.5"/>
+  <text x="235" y="244" fill="#fbbf24" font-family="Consolas, monospace" font-size="11.5" font-weight="700" text-anchor="middle">d₁ (таз)</text>
+
+  <line x1="274" y1="262" x2="332" y2="262" stroke="#34d399" stroke-width="2.5"/>
+  <text x="303" y="280" fill="#34d399" font-family="Consolas, monospace" font-size="11.5" font-weight="700" text-anchor="middle">d₂ (коліно)</text>
+
+  <!-- Вузли суглобів + Штанга -->
+  <circle cx="256" cy="348" r="6" fill="#f8fafc"/>
+  <circle cx="332" cy="262" r="7" fill="#10b981" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="196" cy="254" r="7" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="274" cy="158" r="15" fill="url(#barGrad)" stroke="#ffffff" stroke-width="2.5"/>
+  <text x="274" y="162" fill="#090d18" font-family="Inter, sans-serif" font-size="10" font-weight="800" text-anchor="middle">BAR</text>
+
+  <!-- Вектор GRF вгору -->
+  <line x1="274" y1="344" x2="274" y2="302" stroke="#38bdf8" stroke-width="4"/>
+  <polygon points="274 292 267 306 281 306" fill="#38bdf8"/>
+
+  <!-- Права панель: Інженерні висновки -->
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="512" y="102" width="402" height="86" rx="14" fill="#111b2e" stroke="#f59e0b" stroke-opacity="0.5"/>
+    <text x="532" y="128" fill="#fbbf24" font-size="14" font-weight="800">1. Крутний момент у кульшовому суглобі (M₁ = F × d₁)</text>
+    <text x="532" y="150" fill="#cbd5e1" font-size="12.5">Довше плече d₁ активує великий сідничний м’яз і задню</text>
+    <text x="532" y="170" fill="#cbd5e1" font-size="12.5">поверхню стегна (домінанта Low-Bar / станова тяга).</text>
+
+    <rect x="512" y="205" width="402" height="86" rx="14" fill="#111b2e" stroke="#10b981" stroke-opacity="0.5"/>
+    <text x="532" y="231" fill="#34d399" font-size="14" font-weight="800">2. Крутний момент у колінному суглобі (M₂ = F × d₂)</text>
+    <text x="532" y="253" fill="#cbd5e1" font-size="12.5">Вертикальний корпус у фронтальному присіданні збільшує d₂,</text>
+    <text x="532" y="273" fill="#cbd5e1" font-size="12.5">прицільно навантажуючи квадрицепс без компресії попереку.</text>
+
+    <rect x="512" y="308" width="402" height="86" rx="14" fill="#111b2e" stroke="#38bdf8" stroke-opacity="0.5"/>
+    <text x="532" y="334" fill="#38bdf8" font-size="14" font-weight="800">3. Критичний кут дорсифлексії гомілки: 32°–38°</text>
+    <text x="532" y="356" fill="#cbd5e1" font-size="12.5">Використання важкоатлетичних штангеток (підбор 19–22 мм)</text>
+    <text x="532" y="376" fill="#cbd5e1" font-size="12.5">стабілізує коліно й усуває «підкручування» таза внизу.</text>
+  </g>
+</svg>

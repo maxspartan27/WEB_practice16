@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-label="Добова хронобіологічна карта працездатності організму атлета">
+  <defs>
+    <linearGradient id="chronoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#131c31"/>
+    </linearGradient>
+    <linearGradient id="tempLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="45%" stop-color="#ffb347"/>
+      <stop offset="72%" stop-color="#ff5e3a"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="420" rx="20" fill="url(#chronoBg)"/>
+  <rect x="1" y="1" width="958" height="418" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.1"/>
+
+  <text x="48" y="46" fill="#f8fafc" font-family="Inter, Segoe UI, sans-serif" font-size="19" font-weight="700">Циркадна хронобіологічна карта атлетичної продуктивності (24 години)</text>
+  <text x="48" y="70" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="13">Зв'язок внутрішньої температури ядра тіла, кортизолу та нейром'язової потужності впродовж доби</text>
+
+  <!-- Часові вікна -->
+  <rect x="165" y="96" width="175" height="245" rx="12" fill="#38bdf8" fill-opacity="0.08" stroke="#38bdf8" stroke-opacity="0.25"/>
+  <text x="252" y="120" text-anchor="middle" fill="#7dd3fc" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700">07:00–10:30 • Ранкове вікно</text>
+  <text x="252" y="138" text-anchor="middle" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="11">Пік кортизолу, мобільність, Zone 2</text>
+
+  <rect x="520" y="96" width="215" height="245" rx="12" fill="#ff5e3a" fill-opacity="0.1" stroke="#ff5e3a" stroke-opacity="0.35"/>
+  <text x="627" y="120" text-anchor="middle" fill="#fdba74" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700">16:30–19:30 • Силовий пік</text>
+  <text x="627" y="138" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Segoe UI, sans-serif" font-size="11">Макс. t° тіла (+0,7°C), рекорд сили</text>
+
+  <rect x="765" y="96" width="145" height="245" rx="12" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-opacity="0.3"/>
+  <text x="837" y="120" text-anchor="middle" fill="#c4b5fd" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700">21:30+ • Регенерація</text>
+  <text x="837" y="138" text-anchor="middle" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="11">Мелатонін та соматотропін</text>
+
+  <!-- Вісь часу -->
+  <line x1="70" y1="341" x2="910" y2="341" stroke="#475569" stroke-width="1.5"/>
+  <g fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="12" text-anchor="middle">
+    <text x="90" y="368">05:00</text>
+    <text x="225" y="368">08:00</text>
+    <text x="360" y="368">12:00</text>
+    <text x="495" y="368">15:00</text>
+    <text x="630" y="368">18:00</text>
+    <text x="765" y="368">21:00</text>
+    <text x="885" y="368">23:30</text>
+  </g>
+
+  <!-- Крива продуктивності -->
+  <path d="M90 305 C 145 295, 190 215, 255 205 C 325 195, 385 235, 445 225 C 515 212, 565 152, 635 152 C 705 152, 755 235, 815 280 C 845 302, 868 312, 890 318" fill="none" stroke="url(#tempLine)" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Точки -->
+  <circle cx="255" cy="205" r="6.5" fill="#38bdf8" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="445" cy="225" r="6" fill="#ffb347" stroke="#0a101d" stroke-width="2"/>
+  <circle cx="635" cy="152" r="8" fill="#ff5e3a" stroke="#ffffff" stroke-width="2.5"/>
+  <circle cx="815" cy="280" r="6.5" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
+
+  <text x="635" y="182" text-anchor="middle" fill="#ffffff" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700">+6…11% вибухової потужності</text>
+  <text x="445" y="252" text-anchor="middle" fill="#fde68a" font-family="Inter, Segoe UI, sans-serif" font-size="11.5">Технічна координація</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-label="Діаграма швидкісних зон штанги VBT та залежності швидкості від відсотка 1ПМ">
+  <defs>
+    <linearGradient id="vbtBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b101d"/>
+      <stop offset="100%" stop-color="#131c31"/>
+    </linearGradient>
+    <linearGradient id="vbtLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#10b981"/>
+      <stop offset="70%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="vbtArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5e3a" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="440" rx="22" fill="url(#vbtBg)"/>
+  <rect x="16" y="16" width="928" height="408" rx="16" fill="none" stroke="#334155" stroke-width="1.2"/>
+
+  <text x="48" y="54" fill="#f8fafc" font-family="Inter, Segoe UI, sans-serif" font-size="20" font-weight="800">Профіль «Навантаження — Швидкість» (Velocity-Based Training • APEX RS3)</text>
+  <text x="48" y="78" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="13">Середня концентрична швидкість руху снаряда (MCV, м/с) залежно від відносної ваги (% від 1ПМ)</text>
+
+  <!-- Зони фону -->
+  <rect x="96" y="104" width="190" height="256" fill="#38bdf8" fill-opacity="0.06"/>
+  <rect x="286" y="104" width="200" height="256" fill="#10b981" fill-opacity="0.06"/>
+  <rect x="486" y="104" width="210" height="256" fill="#f59e0b" fill-opacity="0.06"/>
+  <rect x="696" y="104" width="204" height="256" fill="#ef4444" fill-opacity="0.07"/>
+
+  <!-- Сітка -->
+  <g stroke="#293548" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="96" y1="146" x2="900" y2="146"/>
+    <line x1="96" y1="198" x2="900" y2="198"/>
+    <line x1="96" y1="250" x2="900" y2="250"/>
+    <line x1="96" y1="302" x2="900" y2="302"/>
+  </g>
+
+  <!-- Осі -->
+  <line x1="96" y1="104" x2="96" y2="360" stroke="#64748b" stroke-width="2"/>
+  <line x1="96" y1="360" x2="900" y2="360" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Підписи осі Y (м/с) -->
+  <g fill="#cbd5e1" font-family="Consolas, monospace" font-size="12" text-anchor="end">
+    <text x="84" y="110">1.30 м/с</text>
+    <text x="84" y="150">1.05 м/с</text>
+    <text x="84" y="202">0.80 м/с</text>
+    <text x="84" y="254">0.55 м/с</text>
+    <text x="84" y="306">0.30 м/с</text>
+    <text x="84" y="358">0.15 м/с</text>
+  </g>
+
+  <!-- Підписи осі X (% 1ПМ) -->
+  <g fill="#cbd5e1" font-family="Consolas, monospace" font-size="12" text-anchor="middle">
+    <text x="135" y="384">35% 1ПМ</text>
+    <text x="286" y="384">50% 1ПМ</text>
+    <text x="486" y="384">70% 1ПМ</text>
+    <text x="696" y="384">85% 1ПМ</text>
+    <text x="865" y="384">97–100%</text>
+  </g>
+
+  <!-- Назви швидкісних зон -->
+  <g font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    <text x="191" y="126" fill="#38bdf8">ШВИДКІСНА СИЛА</text>
+    <text x="191" y="142" fill="#94a3b8" font-weight="500">1.00–1.30 м/с (Пліометрика)</text>
+
+    <text x="386" y="126" fill="#10b981">СИЛОВА ШВИДКІСТЬ</text>
+    <text x="386" y="142" fill="#94a3b8" font-weight="500">0.75–1.00 м/с (Вибух ЦНС)</text>
+
+    <text x="591" y="126" fill="#f59e0b">ПРИСКОРЮВАЛЬНА СИЛА</text>
+    <text x="591" y="142" fill="#94a3b8" font-weight="500">0.45–0.75 м/с (Гіпертрофія)</text>
+
+    <text x="798" y="126" fill="#f87171">МАКСИМАЛЬНА СИЛА</text>
+    <text x="798" y="142" fill="#94a3b8" font-weight="500">0.18–0.45 м/с (Важка база)</text>
+  </g>
+
+  <!-- Заливка та лінія кривої VBT -->
+  <path d="M130 122 L286 176 L486 238 L696 294 L870 340 L870 360 L130 360 Z" fill="url(#vbtArea)"/>
+  <path d="M130 122 C220 154, 360 202, 486 238 C600 270, 745 308, 870 340" fill="none" stroke="url(#vbtLine)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Контрольні вузли -->
+  <g stroke="#0b101d" stroke-width="3">
+    <circle cx="130" cy="122" r="7" fill="#38bdf8"/>
+    <circle cx="286" cy="176" r="7" fill="#22d3ee"/>
+    <circle cx="486" cy="238" r="7" fill="#10b981"/>
+    <circle cx="696" cy="294" r="7" fill="#f59e0b"/>
+    <circle cx="870" cy="340" r="7" fill="#ef4444"/>
+  </g>
+
+  <!-- Підписи точок -->
+  <g fill="#f8fafc" font-family="Inter, Segoe UI, sans-serif" font-size="11.5" font-weight="700">
+    <rect x="444" y="202" width="92" height="24" rx="6" fill="#0f172a" stroke="#10b981"/>
+    <text x="490" y="218" text-anchor="middle">0.64 м/с • 70%</text>
+
+    <rect x="650" y="258" width="96" height="24" rx="6" fill="#0f172a" stroke="#f59e0b"/>
+    <text x="698" y="274" text-anchor="middle">0.42 м/с • 85%</text>
+
+    <rect x="782" y="304" width="108" height="24" rx="6" fill="#0f172a" stroke="#ef4444"/>
+    <text x="836" y="320" text-anchor="middle">0.21 м/с • 1ПМ</text>
+  </g>
+
+  <text x="498" y="414" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="12" text-anchor="middle">Лабораторія біомеханіки спортивного клубу «APEX» • Авторська інфографіка Максима Ковалишина (2026)</text>
+</svg>

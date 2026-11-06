@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="obsidian">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Про клуб і запис — Спортивний клуб APEX</title>
+  <meta name="description" content="Інфраструктура спортивного клубу APEX v3.1 RS3, 12 тренувальних зон, команда тренерів, студія 8 тем оформлення та онлайн-запис.">
+  <meta name="author" content="Максим Ковалишин">
+  <meta name="theme-color" content="#080b12">
+  <link rel="canonical" href="https://maxspartan27.github.io/about.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content="Про клуб і запис — Спортивний клуб APEX">
+  <meta property="og:description" content="Інфраструктура спортивного клубу APEX v3.1 RS3, 12 тренувальних зон, команда тренерів, студія 8 тем оформлення та онлайн-запис.">
+  <meta property="og:url" content="https://maxspartan27.github.io/about.html">
+  <meta property="og:image" content="https://maxspartan27.github.io/images/topic-crossfit.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("apex-ui-theme");
+        if (["obsidian", "daylight", "biolab", "amethyst", "titan", "cyber", "crimson", "nordic"].indexOf(t) !== -1) {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+        var f = localStorage.getItem("apex-font-scale");
+        if (f === "lg" || f === "xl") {
+          document.documentElement.setAttribute("data-font-scale", f);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html" aria-label="Спортивний клуб APEX — на головну сторінку">
+          <span class="brand-mark" data-icon="apex"></span>
+          <span>
+            APEX
+            <span class="brand-sub">Performance Club</span>
+          </span>
+        </a>
+        <button type="button" class="build-pill" data-open-build title="Відкрити технічний паспорт v3.1 (build 197) RS3">
+          <span data-icon="cpu"></span>v3.1 <span>• b197 RS3</span>
+        </button>
+      </div>
+
+      <nav class="main-nav" id="primary-navigation" aria-label="Головна навігація сайту">
+        <a class="nav-link" href="index.html"><span data-icon="home"></span>Головна</a>
+        <a class="nav-link" href="topics.html"><span data-icon="layers"></span>Теми (12)</a>
+        <a class="nav-link" href="article.html"><span data-icon="table"></span>Періодизація</a>
+        <a class="nav-link" href="journal.html"><span data-icon="book"></span>Біоархітектура</a>
+        <a class="nav-link" href="biomechanics.html"><span data-icon="gauge"></span>VBT-стаття</a>
+        <a class="nav-link active" href="about.html" aria-current="page"><span data-icon="shield"></span>Про клуб</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-action-btn" data-open-palette title="Швидкий пошук по сайту (Ctrl+K)" aria-label="Швидкий пошук по сайту">
+          <span data-icon="search"></span>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+
+        <button type="button" class="icon-action-btn" data-open-plan title="Мій персональний список тренувальних тем" aria-label="Відкрити мій план тренувань">
+          <span data-icon="bookmark"></span>
+          <span class="plan-count-badge">0</span>
+        </button>
+
+        <div class="theme-switcher" role="group" aria-label="Швидкий перемикач 8 колірних тем">
+          <button type="button" class="theme-btn active" data-set-theme="obsidian" aria-pressed="true" title="Тема Вулкан" aria-label="Тема Вулкан"><span data-icon="flame"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="daylight" aria-pressed="false" title="Тема Кварц" aria-label="Тема Кварц"><span data-icon="sun"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="biolab" aria-pressed="false" title="Тема Біолаб" aria-label="Тема Біолаб"><span data-icon="activity"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="amethyst" aria-pressed="false" title="Тема Імпульс" aria-label="Тема Імпульс"><span data-icon="sparkles"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="titan" aria-pressed="false" title="Тема Титан" aria-label="Тема Титан"><span data-icon="award"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="cyber" aria-pressed="false" title="Тема Крига" aria-label="Тема Крига"><span data-icon="snowflake"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="crimson" aria-pressed="false" title="Тема Рубін (NEW RS3)" aria-label="Тема Рубін"><span data-icon="crimson"></span></button>
+          <button type="button" class="theme-btn" data-set-theme="nordic" aria-pressed="false" title="Тема Срібло (NEW RS3)" aria-label="Тема Срібло"><span data-icon="leaf"></span></button>
+        </div>
+
+        <button type="button" class="icon-action-btn" data-open-studio title="Відкрити студію 8 тем і розміру шрифту">
+          <span data-icon="palette"></span>
+          <span class="icon-action-label">Теми</span>
+        </button>
+
+        <a class="btn btn-primary btn-sm header-cta-desktop" href="#booking">Записатися</a>
+
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Відкрити меню навігації"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Навігаційний ланцюжок">
+          <li><a href="index.html">Головна</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Про клуб, команду та запис</li>
+        </ol>
+        <span class="eyebrow"><span data-icon="shield"></span>Інфраструктура, команда та специфікація v3.1 (build 197) RS3</span>
+        <h1>Про спортивний клуб APEX, тренерську команду та запис на заняття</h1>
+        <p class="section-lead">
+          Ознайомтеся з інженерним оснащенням 12 тренувальних зон, кваліфікацією тренерської ради, новими лабораторіями релізу v3.1 RS3 та оформіть гостьовий пропуск онлайн.
+        </p>
+      </div>
+    </section>
+
+    <!-- Філософія та інфраструктура -->
+    <section class="section">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span data-icon="compass"></span>Архітектура комплексу</span>
+          <h2>Простір, де спортивна наука поєднується з інженерним комфортом</h2>
+          <p>
+            Комплекс <strong>APEX</strong> площею 3 800 м² спроєктовано з розділенням силових VBT-помостів, зони олімпійської важкої атлетики, критої спринтерської доріжки, студії Wattbike, 25-метрового басейну та тихого гідротермального лаунжу на окремі кліматичні й акустичні контури.
+          </p>
+          <p>
+            Цифрова вебплатформа клубу у релізі <strong>v3.1 (build 197) RS3</strong> надає резидентам миттєвий доступ до протоколів 12 тренувальних тем, радара атлетичного профілю, асистента дисків штанги IWF, 3 науково-практичних статей та 8 колірних тем.
+          </p>
+
+          <div class="grid-2" style="margin-top:1.25rem;">
+            <div class="card" style="padding:1.15rem;">
+              <div class="card-icon" data-icon="activity" style="width:40px;height:40px;margin-bottom:0.75rem;"></div>
+              <h3>Чисте повітря 24/7</h3>
+              <p style="margin-bottom:0;font-size:0.89rem;">Шестикратна рекуперація повітря підтримує концентрацію CO₂ нижче 600 ppm навіть у години пік.</p>
+            </div>
+            <div class="card" style="padding:1.15rem;">
+              <div class="card-icon" data-icon="droplets" style="width:40px;height:40px;margin-bottom:0.75rem;"></div>
+              <h3>Озонована аква-зона</h3>
+              <p style="margin-bottom:0;font-size:0.89rem;">Басейн 25 м із багатоступеневою УФ- та озоновою очисткою без подразнення шкіри й очей.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-frame">
+          <img
+            src="images/topic-crossfit.jpg"
+            alt="Тренування з канатами, гирями та веслувальними ергометрами у функціональному залі спортивного клубу APEX"
+            width="1280"
+            height="720"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Розширена таблиця тренерського складу (7 фахівців) -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow"><span data-icon="award"></span>Експертна рада</span>
+          <h2>Провідні наставники та методисти клубу APEX</h2>
+          <p class="section-lead">
+            Команда дипломованих фахівців із біомеханіки спорту, важкої атлетики, плавання та фізичної реабілітації.
+          </p>
+        </div>
+
+        <div class="table-card">
+          <div class="table-toolbar">
+            <div class="table-toolbar-title">
+              <strong><span data-icon="shield"></span>Реєстр спеціалістів тренерської ради APEX</strong>
+              <span>Підтримується пошук за спеціалізацією, сортування досвіду та експорт CSV</span>
+            </div>
+            <div class="table-controls">
+              <input
+                type="search"
+                class="table-search"
+                data-table-search="#coaches-table"
+                placeholder="Пошук тренера чи напряму..."
+                aria-label="Пошук у таблиці тренерів клубу"
+              >
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="modern-table" id="coaches-table">
+              <caption>Кваліфікація та напрями роботи тренерської команди клубу APEX</caption>
+              <thead>
+                <tr>
+                  <th scope="col" data-sort="text">Ім’я наставника</th>
+                  <th scope="col" data-sort="text">Провідна спеціалізація</th>
+                  <th scope="col" data-sort="text">Сертифікація та звання</th>
+                  <th scope="col" data-sort="num">Досвід</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Тарас Бондаренко</strong></td>
+                  <td>Силова біомеханіка, пауербілдинг та важка атлетика</td>
+                  <td>Магістр біомеханіки спорту, Майстер спорту України</td>
+                  <td data-value="9"><span class="badge badge-z4">9 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Марина Лисенко</strong></td>
+                  <td>Спортивне плавання 25 м та аква-кондиціонінг</td>
+                  <td>Майстер спорту з плавання, тренер вищої категорії</td>
+                  <td data-value="10"><span class="badge badge-z5">10 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Олена Савчук</strong></td>
+                  <td>Кардіореспіраторна витривалість, біг і тріатлон Z2</td>
+                  <td>Сертифікований методист циклічних видів спорту</td>
+                  <td data-value="7"><span class="badge badge-z2">7 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Роман Кравченко</strong></td>
+                  <td>Воркаут, калістеніка та гімнастичні кільця</td>
+                  <td>Переможець всеукраїнських турнірів зі стрітліфтингу</td>
+                  <td data-value="6"><span class="badge badge-z3">6 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Андрій Коваль</strong></td>
+                  <td>Метаболічний HIIT &amp; гібридний крос-тренінг</td>
+                  <td>Спеціаліст із функціональної та гібридної підготовки</td>
+                  <td data-value="6"><span class="badge badge-z3">6 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Ірина Мельник</strong></td>
+                  <td>Кінезіотерапія, корекція постави, МФР і відновлення</td>
+                  <td>Фізичний терапевт, реабілітолог опорно-рухового апарату</td>
+                  <td data-value="8"><span class="badge badge-z1">8 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Дмитро Гриценко</strong></td>
+                  <td>Технічний бокс і швидкісно-силова координація</td>
+                  <td>КМС з боксу, старший інструктор зони єдиноборств</td>
+                  <td data-value="8"><span class="badge badge-z4">8 років</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Артем Мельничук</strong></td>
+                  <td>Спринт, вибухова пліометрика та велоергометрія FTP Wattbike</td>
+                  <td>Майстер спорту з легкої атлетики, аналітик VBT-телеметрії</td>
+                  <td data-value="9"><span class="badge badge-z5">9 років</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-scroll-hint">↔ Гортайте таблицю горизонтально на екрані смартфона</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Онлайн-запис на всі 12 тем та паспорт проєкту -->
+    <section class="section" id="booking">
+      <div class="container grid-2">
+        <div class="card">
+          <span class="eyebrow"><span data-icon="calendar"></span>Онлайн-реєстрація</span>
+          <h2>Запис на пробне тренування та діагностику</h2>
+          <p>
+            Оберіть будь-яку з дванадцяти тренувальних тем клубу APEX і зручне часове вікно — координатор підготує гостьовий пропуск.
+          </p>
+
+          <form id="booking-form" novalidate>
+            <div class="form-group">
+              <label for="athlete-name">Ваше ім’я:</label>
+              <input
+                type="text"
+                id="athlete-name"
+                name="athleteName"
+                class="form-control"
+                placeholder="Наприклад, Максим"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="training-goal">Оберіть тренувальну тему (1–12):</label>
+              <select id="training-goal" name="trainingGoal" class="form-control">
+                <option value="01. Силова біомеханіка та пауербілдинг">01. Силова біомеханіка та пауербілдинг</option>
+                <option value="02. Високоінтенсивний тренінг HIIT & MetCon">02. Високоінтенсивний тренінг HIIT &amp; MetCon</option>
+                <option value="03. Кардіовитривалість та Zone 2">03. Кардіовитривалість та Zone 2</option>
+                <option value="04. Кінезіотерапія, мобільність і спина">04. Кінезіотерапія, мобільність і спина</option>
+                <option value="05. Технічний бокс і координація">05. Технічний бокс і координація</option>
+                <option value="06. Спортивна регенерація та гідротерапія">06. Спортивна регенерація та гідротерапія</option>
+                <option value="07. Олімпійська важка атлетика">07. Олімпійська важка атлетика</option>
+                <option value="08. Спортивне плавання 25 м">08. Спортивне плавання 25 м</option>
+                <option value="09. Воркаут і калістеніка">09. Воркаут і калістеніка</option>
+                <option value="10. Гібридний крос-тренінг">10. Гібридний крос-тренінг</option>
+                <option value="11. Спринт, вибухова пліометрика та легка атлетика (NEW v3.1)">11. Спринт, вибухова пліометрика та легка атлетика (NEW v3.1)</option>
+                <option value="12. Велоергометрія потужності FTP Wattbike (NEW v3.1)">12. Велоергометрія потужності FTP Wattbike (NEW v3.1)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferred-slot">Бажаний час візиту:</label>
+              <select id="preferred-slot" name="preferredSlot" class="form-control">
+                <option value="Ранкове вікно (06:30 – 11:30)">Ранкове вікно (06:30 – 11:30)</option>
+                <option value="Денне вікно (12:00 – 16:00)">Денне вікно (12:00 – 16:00)</option>
+                <option value="Вечірній силовий пік (16:30 – 20:30)">Вечірній силовий пік (16:30 – 20:30)</option>
+                <option value="Вечірнє відновлення (20:30 – 22:30)">Вечірнє відновлення (20:30 – 22:30)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:0.4rem;">
+              <span data-icon="check"></span>Підтвердити бронювання візиту
+            </button>
+
+            <div id="booking-status" class="form-status" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+
+        <div class="card">
+          <span class="eyebrow"><span data-icon="cpu"></span>Специфікація релізу v3.1 (build 197) RS3</span>
+          <h2>Режим роботи, студія 8 тем та авторські права</h2>
+          <p>
+            Вебплатформу побудовано за стандартами HTML5, CSS3 Custom Properties, Vanilla ES6+ JavaScript, WCAG 2.1, Web App Manifest та SEO-вимогами для публікації на GitHub Pages і реєстрації в Bing Webmaster Tools.
+          </p>
+
+          <h3>Графік прийому резидентів</h3>
+          <ul>
+            <li><strong>Будні дні (Пн–Пт):</strong> 06:30 – 23:00 без перерв.</li>
+            <li><strong>Вихідні дні (Сб–Нд):</strong> 07:30 – 22:00 (басейн, спринт-трек і зона регенерації доступні ввесь день).</li>
+          </ul>
+
+          <h3>Персоналізація інтерфейсу</h3>
+          <p>
+            Випробуйте всі 8 колірних тем (<em>Вулкан, Кварц, Біолаб, Імпульс, Титан, Крига, Рубін, Срібло</em>) та регулятор масштабу шрифту у вбудованій студії оформлення:
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:auto;">
+            <button type="button" class="btn btn-outline btn-sm" data-open-studio><span data-icon="palette"></span>Відкрити Студію 8 тем</button>
+            <button type="button" class="btn btn-outline btn-sm" data-open-build><span data-icon="cpu"></span>Паспорт збірки b197 RS3</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark" data-icon="apex"></span>
+            <span>
+              APEX
+              <span class="brand-sub">Performance Club</span>
+            </span>
+          </a>
+          <p style="margin-top:0.9rem;font-size:0.89rem;">
+            Сучасний спортивний клуб доказової фізичної підготовки, цифрової VBT-біомеханіки, важкої атлетики, плавання, спринту та системної регенерації.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="compass"></span>Навігація</h2>
+          <ul class="footer-links">
+            <li><a href="index.html"><span data-icon="home"></span>Головна сторінка</a></li>
+            <li><a href="topics.html"><span data-icon="layers"></span>12 тренувальних тем із фото</a></li>
+            <li><a href="article.html"><span data-icon="table"></span>Стаття: періодизація й таблиці</a></li>
+            <li><a href="journal.html"><span data-icon="book"></span>Стаття: біоархітектура атлета</a></li>
+            <li><a href="biomechanics.html"><span data-icon="gauge"></span>Стаття: VBT-біомеханіка (NEW)</a></li>
+            <li><a href="about.html"><span data-icon="shield"></span>Про клуб та онлайн-запис</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="layers"></span>Напрями RS3</h2>
+          <ul class="footer-links">
+            <li><a href="topics.html#sprint"><span data-icon="footprints"></span>11. Спринт і пліометрика (NEW)</a></li>
+            <li><a href="topics.html#cycling"><span data-icon="bike"></span>12. Велоергометрія FTP (NEW)</a></li>
+            <li><a href="topics.html#olympic"><span data-icon="barbell"></span>07. Олімпійська важка атлетика</a></li>
+            <li><a href="topics.html#aqua"><span data-icon="waves"></span>08. Спортивне плавання 25 м</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-heading"><span data-icon="cpu"></span>Сервіси та SEO</h2>
+          <ul class="footer-links">
+            <li><a href="biomechanics.html#sec-plate-loader"><span data-icon="disc"></span>Асистент дисків штанги IWF</a></li>
+            <li><a href="#booking"><span data-icon="calendar"></span>Запис на пробне тренування</a></li>
+            <li><a href="sitemap.xml"><span data-icon="layers"></span>Карта сайту XML (Sitemap)</a></li>
+            <li><a href="robots.txt"><span data-icon="shield"></span>Правила індексації (Robots.txt)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p class="copyright-primary">
+          <span><span data-icon="lock"></span> <strong>© 2026 Спортивний клуб «APEX». Автор і розробник проєкту: Максим Ковалишин. Усі права захищено.</strong></span>
+          <button type="button" class="build-pill" data-open-build>v3.1 (build 197) RS3</button>
+        </p>
+        <p class="copyright-secondary">
+          Увесь вміст цього вебсайту — авторські статті, практичні розрахунки, модернізовані таблиці, графічні матеріали, векторна іконографіка, дизайн інтерфейсу та вихідний програмний код — є об’єктом авторського права й охороняється відповідно до Закону України «Про авторське право і суміжні права» та міжнародних конвенцій. Будь-яке копіювання, відтворення чи поширення матеріалів без попередньої письмової згоди автора заборонено.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Прокрутити сторінку вгору"></button>
+  <script src="script.js"></script>
+</body>
+</html>
